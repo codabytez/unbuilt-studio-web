@@ -20,6 +20,30 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    // files: ["**/*.ts", "**/*.tsx"],
+    // languageOptions: {
+    //   parserOptions: {
+    //     ecmaVersion: 2024,
+    //     sourceType: "module",
+    //     ecmaFeatures: {
+    //       jsx: true,
+    //     },
+    //   },
+    // },
+    rules: {
+      "no-console": "error",
+      // "react/react-in-jsx-scope": "off",
+      // "react/jsx-uses-react": "off",
+      "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      // "react/prop-types": "off",
+      // "@typescript-eslint/ban-ts-comment": "off",
+      // "@typescript-eslint/no-explicit-any": "off",
+      // "@typescript-eslint/explicit-module-boundary-types": "off",
+      // "@next/next/no-img-element": "error",
+      // "@next/next/no-html-link-for-pages": "error",
+    },
+  },
 ];
 
 export default eslintConfig;

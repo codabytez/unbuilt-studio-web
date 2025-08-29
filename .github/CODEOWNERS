@@ -1,0 +1,12 @@
+# 👑 Default: all files → review required by core maintainers
+*       @codabytez
+
+# 🖌️ Components & styles → frontend-focused reviewers
+src/components/*   @codabytez
+src/styles/*       @codabytez
+
+# 📝 Documentation → doc maintainer
+*.md               @codabytez
+
+# ⚙️ Config, workflows, CI/CD → ops/devops reviewer
+.github/*          @codabytez

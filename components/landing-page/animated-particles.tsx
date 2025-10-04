@@ -15,10 +15,10 @@ const AnimatedParticles = () => {
   useEffect(() => {
     const generateParticles = () => {
       const colors = [
-        "--neon-cyan",
-        "--neon-pink",
-        "--neon-purple",
-        "--electric-blue",
+        "var(--color-neon-cyan)",
+        "var(--color-neon-pink)",
+        "var(--color-neon-purple)",
+        "var(--color-electric-blue)",
       ];
       const newParticles: Particle[] = [];
 
@@ -40,7 +40,7 @@ const AnimatedParticles = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute top-0 pointer-events-none overflow-hidden h-screen w-full">
       {particles.map((particle) => (
         <div
           key={particle.id}
@@ -50,7 +50,7 @@ const AnimatedParticles = () => {
             top: `${particle.y}%`,
             width: `${particle.size}px`,
             height: `${particle.size}px`,
-            background: `hsl(var(${particle.color}))`,
+            background: particle.color,
             animation: `particles 8s linear infinite`,
             animationDelay: `${particle.delay}s`,
           }}

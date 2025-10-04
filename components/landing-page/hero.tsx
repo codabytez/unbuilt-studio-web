@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "../UI/button";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { APP } from "@/lib/constants";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -45,17 +46,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
-            <Link href="/contact">
+            <Link href={`mailto:${APP.EMAIL}`}>
               <Button size="lg" className="group text-lg">
                 Start a Project
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <Link href="/projects">
+            {/* <Link href="/projects">
               <Button size="lg" variant="outline" className="text-lg">
                 View Our Work
               </Button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

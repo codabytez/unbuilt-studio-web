@@ -60,28 +60,9 @@
   --container-max-width-2xl: 1400px;
 }
 
-/* Custom Properties (outside theme system) */
-@layer base {
-  :root {
-    /* Agency-specific tokens */
-    --hero-gradient: linear-gradient(
-      135deg,
-      hsl(0 0% 100%) 0%,
-      hsl(0 0% 98%) 100%
-    );
-    --card-gradient: linear-gradient(
-      180deg,
-      hsl(0 0% 100%) 0%,
-      hsl(0 0% 98%) 100%
-    );
-    --shadow-elegant: 0 20px 60px -15px hsl(0 0% 0% / 0.15);
-    --shadow-hover: 0 30px 80px -20px hsl(0 0% 0% / 0.25);
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  /* Dark mode using class selector instead of media query */
-  .dark {
+/* Dark Mode Theme */
+@media (prefers-color-scheme: dark) {
+  @theme {
     --color-background: hsl(0 0% 0%);
     --color-foreground: hsl(0 0% 100%);
 
@@ -109,19 +90,44 @@
     --color-border: hsl(0 0% 15%);
     --color-input: hsl(0 0% 15%);
     --color-ring: hsl(0 0% 100%);
+  }
+}
 
+/* Custom Properties (outside theme system) */
+@layer base {
+  :root {
+    /* Agency-specific tokens */
     --hero-gradient: linear-gradient(
       135deg,
-      hsl(0 0% 0%) 0%,
-      hsl(0 0% 8%) 100%
+      hsl(0 0% 100%) 0%,
+      hsl(0 0% 98%) 100%
     );
     --card-gradient: linear-gradient(
       180deg,
-      hsl(0 0% 5%) 0%,
-      hsl(0 0% 3%) 100%
+      hsl(0 0% 100%) 0%,
+      hsl(0 0% 98%) 100%
     );
-    --shadow-elegant: 0 20px 60px -15px hsl(0 0% 100% / 0.05);
-    --shadow-hover: 0 30px 80px -20px hsl(0 0% 100% / 0.1);
+    --shadow-elegant: 0 20px 60px -15px hsl(0 0% 0% / 0.15);
+    --shadow-hover: 0 30px 80px -20px hsl(0 0% 0% / 0.25);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --hero-gradient: linear-gradient(
+        135deg,
+        hsl(0 0% 0%) 0%,
+        hsl(0 0% 8%) 100%
+      );
+      --card-gradient: linear-gradient(
+        180deg,
+        hsl(0 0% 5%) 0%,
+        hsl(0 0% 3%) 100%
+      );
+      --shadow-elegant: 0 20px 60px -15px hsl(0 0% 100% / 0.05);
+      --shadow-hover: 0 30px 80px -20px hsl(0 0% 100% / 0.1);
+    }
   }
 }
 
